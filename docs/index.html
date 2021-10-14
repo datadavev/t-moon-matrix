@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t-moon-matrix</title>
+  <script type="application/ld+json">
+    {
+        "@context":"https://schema.org/",
+        "@graph":[
+          {
+            "@type":"WebPage",
+            "@id":"index.html",
+            "url": {
+              "@id": "https://github.com/datadavev/t-moon-matrix"
+            },
+            "author": {
+              "@type": "Person",
+              "@id": "https://orcid.org/0000-0002-6513-4996",
+              "name": "Dave Vieglais"    
+            },
+            "keywords": ["lunar", "calendar", "moon-phases"],
+            "description":"Demo page for t-moon-matrix webcomponent, showing moon phases for a year",
+            "dateModified":"2021-10-14",
+            "license":{"@id":"https://spdx.org/licenses/MIT.html"},
+            "relatedLink":[
+              "https://www.npmjs.com/package/t-moon-matrix",
+              "https://unpkg.com/t-moon-matrix"
+            ]
+          }
+        ]
+    }
+  </script>
+  <style>
+    body {
+      background: #fafafa;
+    }
+    .year_slide {
+      width:66%;
+    }
+  </style>  
+  <script type="module" src="../t-moon-matrix.js"></script>
+  <script>
+    function updateYear(y) {
+      const mm = document.getElementById("mm");
+      mm.year = y;
+    }
+  </script>
+</head>
+<body>
+  <section>
+
+    <p>
+      <span>1900</span>
+      <input class="year_slide" type="range" min="1900" max="2200" value="2021" onchange="updateYear(this.value)">
+      <span>2200</span>
+    </p>
+
+    <t-moon-matrix id="mm"></t-moon-matrix>  
+</section>
+</body>
+</html>
