@@ -39,7 +39,20 @@
       width:66%;
     }
   </style>  
-  <script type="module" src="../t-moon-matrix.js"></script>
+  <script>    
+  function loadModule(src, called){
+    const script = document.createElement('script');
+    script.src = src;
+    script.type = "module";
+    document.head.append(script);
+    if (called === undefined) {
+        script.onerror = () => {      
+        loadModule("https://unpkg.com/t-moon-matrix/t-moon-matrix.js?module", true);
+      }
+    }
+  }
+  loadModule("../t-moon-matrix.js");
+  </script>
   <script>
     function updateYear(y) {
       const mm = document.getElementById("mm");
