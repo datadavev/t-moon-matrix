@@ -3,7 +3,7 @@
   "description": "Webcomponent t-moon-matrix following open-wc recommendations",
   "license": "MIT",
   "author": "t-moon-matrix",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "module": "index.js",
   "scripts": {
